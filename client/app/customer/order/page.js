@@ -11,7 +11,7 @@ const SAMPLE_BAKERIES = [
     rating: 4.8,
     distance: "0.5 miles",
     specialties: ["Cakes", "Cupcakes", "Cookies"],
-    image: "/bakeries/sweet-delights.jpg",
+    image: "/images/bakeries/Sweet Delights.png",
     offers: ["10% off on all cakes", "Buy 2 get 1 free on cookies"],
     festivalOffers: ["Special Diwali sweets box - 20% off"]
   },
@@ -21,7 +21,7 @@ const SAMPLE_BAKERIES = [
     rating: 4.6,
     distance: "1.2 miles",
     specialties: ["Bread", "Pastries", "Muffins"],
-    image: "/bakeries/bake-take.jpg",
+    image: "/images/bakeries/Bake & Take.png",
     offers: ["15% off on first order", "Free delivery on orders above $30"],
     festivalOffers: ["Christmas special cake - 25% off"]
   },
@@ -31,7 +31,7 @@ const SAMPLE_BAKERIES = [
     rating: 4.9,
     distance: "0.8 miles",
     specialties: ["Cupcakes", "Cake Pops", "Macarons"],
-    image: "/bakeries/cupcake-heaven.jpg",
+    image: "/images/bakeries/Cupcake Heaven.png",
     offers: ["20% off on bulk orders", "Free customization"],
     festivalOffers: ["Easter special cupcake box - 15% off"]
   }
@@ -44,7 +44,7 @@ const RECOMMENDATIONS = [
     name: "Chocolate Fudge Cake",
     bakery: "Sweet Delights",
     price: "$24.99",
-    image: "/recommendations/chocolate-fudge.jpg",
+    image: "/images/products/Chocolate Fudge Cake.png",
     rating: 4.9
   },
   {
@@ -52,7 +52,7 @@ const RECOMMENDATIONS = [
     name: "Red Velvet Cupcake",
     bakery: "Cupcake Heaven",
     price: "$3.99",
-    image: "/recommendations/red-velvet.jpg",
+    image: "/images/products/Red Velvet Cupcake.png",
     rating: 4.8
   },
   {
@@ -60,7 +60,7 @@ const RECOMMENDATIONS = [
     name: "Sourdough Bread",
     bakery: "Bake & Take",
     price: "$8.99",
-    image: "/recommendations/sourdough.jpg",
+    image: "/images/products/Sourdough Bread.png",
     rating: 4.7
   }
 ];
@@ -154,7 +154,11 @@ export default function CustomerOrderPage() {
             {RECOMMENDATIONS.map((item) => (
               <div key={item.id} className="bg-white rounded-xl shadow-md overflow-hidden">
                 <div className="h-48 bg-gray-200">
-                  {/* Image placeholder */}
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-4">
                   <div className="flex justify-between items-start">
@@ -185,7 +189,11 @@ export default function CustomerOrderPage() {
             {SAMPLE_BAKERIES.map((bakery) => (
               <div key={bakery.id} className="bg-white rounded-xl shadow-md overflow-hidden">
                 <div className="h-48 bg-gray-200">
-                  {/* Image placeholder */}
+                  <img 
+                    src={bakery.image} 
+                    alt={bakery.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-4">
                   <div className="flex justify-between items-start">

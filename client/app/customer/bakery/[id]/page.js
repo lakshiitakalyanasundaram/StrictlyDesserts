@@ -10,7 +10,7 @@ const SAMPLE_BAKERY = {
   rating: 4.8,
   distance: "0.5 miles",
   specialties: ["Cakes", "Cupcakes", "Cookies"],
-  image: "/bakeries/sweet-delights.jpg",
+  image: "/images/bakeries/Sweet Delights.png",
   description: "A family-owned bakery specializing in custom cakes and desserts. We use only the finest ingredients to create delicious treats that will make your special occasions even more memorable.",
   hours: {
     monday: "9:00 AM - 8:00 PM",
@@ -31,14 +31,14 @@ const SAMPLE_BAKERY = {
           name: "Chocolate Fudge Cake",
           description: "Rich chocolate cake with fudge filling and chocolate ganache",
           price: 24.99,
-          image: "/menu/chocolate-fudge.jpg"
+          image: "/images/products/Chocolate Fudge Cake.png"
         },
         {
           id: 102,
-          name: "Red Velvet Cake",
+          name: "Red Velvet Cupcake",
           description: "Classic red velvet with cream cheese frosting",
           price: 26.99,
-          image: "/menu/red-velvet.jpg"
+          image: "/images/products/Red Velvet Cupcake.png"
         }
       ]
     },
@@ -51,14 +51,14 @@ const SAMPLE_BAKERY = {
           name: "Vanilla Cupcake",
           description: "Light and fluffy vanilla cupcake with buttercream frosting",
           price: 3.99,
-          image: "/menu/vanilla-cupcake.jpg"
+          image: "/images/products/Vanilla Cupcake.png"
         },
         {
           id: 202,
           name: "Chocolate Cupcake",
           description: "Rich chocolate cupcake with chocolate ganache",
           price: 3.99,
-          image: "/menu/chocolate-cupcake.jpg"
+          image: "/images/products/Chocolate Cupcake.png"
         }
       ]
     }
@@ -105,7 +105,11 @@ export default function BakeryPage({ params }) {
         <div className="bg-white rounded-xl shadow-md p-6 mb-8">
           <div className="flex flex-col md:flex-row gap-6">
             <div className="w-full md:w-1/3 h-64 bg-gray-200 rounded-lg">
-              {/* Image placeholder */}
+              <img 
+                src={SAMPLE_BAKERY.image} 
+                alt={SAMPLE_BAKERY.name}
+                className="w-full h-full object-cover rounded-lg"
+              />
             </div>
             <div className="w-full md:w-2/3">
               <div className="flex justify-between items-start mb-4">
@@ -167,7 +171,11 @@ export default function BakeryPage({ params }) {
             category.items.map((item) => (
               <div key={item.id} className="bg-white rounded-xl shadow-md overflow-hidden">
                 <div className="h-48 bg-gray-200">
-                  {/* Image placeholder */}
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-lg text-pink-800">{item.name}</h3>

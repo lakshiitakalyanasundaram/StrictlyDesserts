@@ -11,7 +11,7 @@ const SAMPLE_CART_ITEMS = [
     bakery: "Sweet Delights",
     price: 24.99,
     quantity: 1,
-    image: "/recommendations/chocolate-fudge.jpg"
+    image: "/images/products/Chocolate Fudge Cake.png"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const SAMPLE_CART_ITEMS = [
     bakery: "Cupcake Heaven",
     price: 3.99,
     quantity: 4,
-    image: "/recommendations/red-velvet.jpg"
+    image: "/images/products/Red Velvet Cupcake.png"
   }
 ];
 
@@ -90,7 +90,11 @@ export default function CartPage() {
                   {cartItems.map((item) => (
                     <div key={item.id} className="flex items-center border-b border-pink-100 pb-4">
                       <div className="w-20 h-20 bg-gray-200 rounded-lg mr-4">
-                        {/* Image placeholder */}
+                        <img 
+                          src={item.image} 
+                          alt={item.name}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-pink-800">{item.name}</h4>
